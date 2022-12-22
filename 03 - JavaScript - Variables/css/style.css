@@ -1,0 +1,42 @@
+
+:root{
+    --base:#ffc600;
+    --spacing:10px;
+    --blur:10px;
+    --border-radious:20px;
+}
+img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    border-radius: var(--border-radious);
+    
+    
+}
+
+
+
+.hl{
+    color: var(--base);
+}
+
+body{
+    background-image: url('https://aad.hsu.edu.hk/wp-content/uploads/2020/07/geometric-dark-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background: #193549; */
+    text-align: center;
+    color: white;
+      font-family: 'helvetica neue', sans-serif;
+      font-weight: 100;
+      font-size: 50px;
+}
+
+
+.controls {
+    margin-bottom: 50px;
+  }
+
+  input {
+    width: 100px;
+  }
