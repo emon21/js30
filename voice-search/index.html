@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Search</title>
+    <style>
+        h2{
+            color: blueviolet;
+            margin-top: 12rem;
+            text-align: center;
+        }
+        input{
+            width: 30%;
+            padding: 10px;
+            border:1px solid tomato;
+            outline: none;
+            padding: 10px;
+        }
+        form{
+            text-align: center;
+        }
+        button{
+            background-color: aquamarine;
+            border: none;
+            height: 37px;
+            width: 80px;
+            font-size: 20px;
+            text-transform: capitalize;
+
+        }
+    </style>
+</head>
+<body>
+
+    <form action="">
+        <h2>Voice To Text SpeechRecognition JavaScriprt</h2>
+        <input id="input" type="text" placeholder="enter your voice">
+        <button id="microphone">voice</button>
+    </form>
+
+    <script>
+
+        var input = document.getElementById('input');
+        var microphone = document.getElementById('microphone');
+        var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if(SpeechRecognition){
+            
+            var recoignition = new webkitSpeechRecognition();
+            microphone.addEventListener('click',function(){
+                recoignition.start();
+            });
+            recoignition.addEventListener("result",function(e){
+                var trans = e.results[0][0].transcript;
+                input.value=trans;
+            });
+            
+        }
+        else{
+            console.log('browser do not support');
+        }
+    </script>
+    
+</body>
+</html>
