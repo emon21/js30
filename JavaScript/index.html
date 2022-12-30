@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Reference VS Copy</title>
+</head>
+<body>
+
+  <script>
+    
+    let user = {
+        name : 'Web Developer',
+        age : 28
+    }
+
+    let grade = {
+        score :450
+    }
+
+
+    const finalResult = Object.assign(user,grade,{teacher:'Raj'});
+
+    console.log(finalResult);
+  </script>
+
+</body>
+</html>

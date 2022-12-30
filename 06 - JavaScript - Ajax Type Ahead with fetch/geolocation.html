@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <button onclick="getLocation()">Try It</button>
+
+<p id="display"></p>
+    <script>
+
+
+const display = document.getElementById('display');
+
+function getLocation(){
+
+    if (navigator.geolocation) {
+        
+        // navigator.geolocation.getCurrentPosition(showPosition,showError);
+        navigator.geolocation.watchPosition(showPosition,showError);
+    }
+    else{
+        display.innerHTML('GeoLocation is not available in your Browser');
+    }
+}
+
+function showPosition(position){
+
+    display.innerHTML = "latitude:" + position.coords.latitude + "<br> longtude" + position.coords.longitude; 
+
+}
+
+
+function showError(error) {
+  switch(error.code) {
+    case error.PERMISSION_DENIED:
+      display.innerHTML = "User denied the request for Geolocation."
+      break;
+    case error.POSITION_UNAVAILABLE:
+      display.innerHTML = "Location information is unavailable."
+      break;
+    case error.TIMEOUT:
+      display.innerHTML = "The request to get user location timed out."
+      break;
+    case error.UNKNOWN_ERROR:
+      display.innerHTML = "An unknown error occurred."
+      break;
+  }
+}
+
+
+// const successfun = (position) => {
+//     console.log(position);
+// };
+// const errorfun = (position) => {
+//     console.error(error);
+// };
+
+// const watchid = navigator.geolocation.watchPosition(successfun,errorfun);
+//         navigator.geolocation.clearWatch(watchid);
+
+
+
+    </script>
+    
+</body>
+</html>
