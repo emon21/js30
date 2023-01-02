@@ -29,7 +29,7 @@
     </form>
   </div>
 
-  <button onclick="deleteId()" class="ClearBtn">Clear Data</button>
+  <button onclick="deleteId()" class="ClearBtn">Clear session storage</button>
 
 <script>
   const addItems = document.querySelector('.add-items');
@@ -58,13 +58,24 @@
         return `
             <li>
                 <input type="checkbox" data-index="${i}" id="item${i}" ${plate.done ? 'checked' : null} />
-                <label for="item${i}">${plate.text}</label> 
-                <button  onclick="removeItem()">Delete</button>  
-
+                <label for="item${i}">${plate.text}</label>  
+                <button  onclick="deleteItem(${i})">Delete</button>  
             </li>`;
     }).join('');
 
+
+    // document.getElementById(platesList).innerHTML = "";
+
   }
+
+//   questions.splice(index, 1);
+// localStorage.setItem('questions',JSON.stringify(questions));
+
+//   function clearBox(platesList)
+// {
+//     document.getElementById(platesList).innerHTML = "";
+// }
+
 
 //   <input type="checkbox" data-index="${i}" id="item${i}" checked="+poop" ${plate.done ? 'checked' : null} />
 
@@ -81,7 +92,7 @@
     
   }
 
-
+ 
   addItems.addEventListener('submit', addItem);
   itemsList.addEventListener('click', toggleDone);
 
@@ -99,6 +110,9 @@ function removeLocalStorage(i) {
 }
 
 
+// let localStorage.setItem();
+let file = localStorage();
+console.log(file);
 
 function deleteId(){
 
@@ -109,11 +123,27 @@ function deleteId(){
 
 }
 
-removeItem = () =>{
 
-    localStorage.removeItem('item');
+
+function deleteItem(item) {
+    // alert(item);
+    // localStorage.removeItem("mytime");
+    localStorage.removeItem(item);
+    // location.reload();
+
+
+
 }
 
+
+// function deleteItem(index) {
+
+//         // alert(index);
+
+//   var existingEntries = JSON.parse(localStorage.getItem(`leftItem-${item}`));
+//   existingEntries.splice(0, index); // delete item at index
+
+// }
 
 </script>
 

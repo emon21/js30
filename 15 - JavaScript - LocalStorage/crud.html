@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+
+<!-- <div>
+    <button onclick="setData()">Set Data</button>
+    <button onclick="getData()">Get Data</button>
+    <button onclick="removeItem()">Remove Data</button>
+</div> -->
+<br>
+
+<div>
+
+
+<form>
+
+    <label for="name">Name : </label>
+    <input type="text" name="" id="name" placeholder="Enter Name...">
+    <input type="button" onclick="manageData()" value="submit">
+</form>
+
+</div>
+<br>
+<br>
+
+<div id="msg"></div>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>Sl</th>
+            <th>Name</th>
+        </tr>
+
+        <tr>
+            <td>01</td>
+            <td>Hasib</td>
+        </tr>
+    </table>
+</div>
+
+
+    <!-- script Start-->
+    <script>
+
+        // let local = localStorage;
+
+        // setData = () => {
+        //     let data = {
+        //         name: 'hasib',
+        //         age : 30
+        //     };
+
+        //     local.setItem('user-info',JSON.stringify(data));
+        // }
+
+        //get data
+        // getData = () =>{
+
+        // }
+
+        // function getData(){
+        //     let data = local.getItem('user-info');
+        //     data.JSON.parse(data);
+        //     console.log(data);
+        // }
+
+        // removeItem = () =>{
+
+        // localStorage.removeItem('user-info');
+        // }
+
+
+        //crud Into Javascript
+
+        let id = "";
+        localStorage.clear(); //data clear 
+
+        function manageData(){
+            // alert(hello);
+             document.getElementById('msg').innerHTML='';
+            let name = document.getElementById('name').value;
+
+            if(name == ''){
+                document.getElementById('msg').innerHTML='Please Enter Your Name';
+            }
+            else{
+                if (id == '') {
+                    
+                }else{
+
+                }
+            }
+
+        }
+
+        function selectData(){}
+        function editData(){}
+        function deleteData(){}
+    </script>
+
+
+    <!-- script End -->
+    
+</body>
+</html>
