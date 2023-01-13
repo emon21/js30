@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="secondsdisplay"></div>
+    <img src="https://miro.medium.com/max/1400/1*e_Loq49BI4WmN7o9ItTADg.gif" alt="">
+    <input type="text" id="box">
+
+    <script>
+
+        var seconds = 0 ;
+        function displaySeconds() {
+            seconds  +=1;
+            document.getElementById('secondsdisplay').innerHTML = 'This page well be redirect In '+seconds+'seconds...';
+        }
+
+        setInterval(displaySeconds,1000);
+
+        function redirectPage(){
+          //  var inputBox = document.getElementById('box');
+            // window.location = document.getElementById('box').innerHTML= inputBox;
+            window.location = '';
+        }
+        setTimeout(redirectPage,4000);
+    </script>
+    
+</body>
+</html>
